@@ -7,8 +7,12 @@ class Customer(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     phone = models.CharField(max_length=15)
+    id = models.IntegerField(max_length=100, primary_key=True)
     email = models.EmailField()
     # t = models.TextChoices()
+    class Meta:
+        db_table = 'customer'
+
 
 class Seller(models.Model):
     first_name = models.CharField(max_length=30)
